@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Anime</title>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Add CSS for adjusting button size */
+        #homeButton {
+            transform: scale(3); /* Adjust the scale factor as needed */
+        } 
+        .logo {
+            font-size: 36px; /* Adjust the font size as needed */
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+            font-style: italic; /* Make the title italic */
+        }
+        #hamburgerButton {
+            transform: scale(3); /* Increase the button size by adjusting the scale factor */
+        }
+        .section-title h1 {
+            font-size: 30px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make titles bold */
+           
+            margin-left: 30px;
+        }
+        
+        /* Add CSS for placing titles beside each other */
+        .section-titles {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 100px; /* Adjust the gap between titles and subtitles */
+        }
+
+        /* Customization for Web Series */
+        .web-series .section-title h1 {
+            margin-left: 20px; /* Shift the title to the right */
+        }
+
+        /* Customization for Movies */
+        .movies .section-title h1 {
+            font-size: 36px; /* Adjust the font size for movies title */
+            margin-left: 20px; /* Shift the title to the right */
+            /* Customization for Recent Releases */
+        }
+        .recent-releases h1 {
+            font-size: 24px; /* Adjust the font size for recent releases title */
+            margin-left: 20; /* Shift the title to the right */
+        }
+        .recent-releases h2 {
+                font-size: 18px; /* Adjust the font size for subheadings */
+                margin-left: 20px; /* Shift the subheadings to the right */
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><button id="homeButton"><i class="fas fa-home"></i></button></li>
+                    <li><button id="webSeriesButton">Web Series</button></li>
+                    <li><button id="moviesButton">Movies</button></li>
+                </ul>
+            </div>
+            <div class="logo">HD ANIME</div>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div><button id="hamburgerButton"><i class="fas fa-bars"></i></button></div>
+        </nav>
+    </header>
+    <header2>
+        <script>
+            // Get references to the buttons and sections
+            const webSeriesButton = document.getElementById("webSeriesButton");
+            const moviesButton = document.getElementById("moviesButton");
+            const webSeriesSection = document.getElementById("webSeriesSection");
+            const moviesSection = document.getElementById("moviesSection");
+
+            // Initially hide the sections
+            webSeriesSection.style.display = "none";
+            moviesSection.style.display = "none";
+
+            // Add click event listeners to the buttons
+            webSeriesButton.addEventListener("click", () => {
+                webSeriesSection.style.display = "block";
+                moviesSection.style.display = "none";
+            });
+
+            moviesButton.addEventListener("click", () => {
+                moviesSection.style.display = "block";
+                webSeriesSection.style.display = "none";
+            });
+        </script>
+    </header2>
+    
+    <div class="section-titles">
+        <div class="web-series">
+            <h1>Web Series
+                <h2>Recent releases
+                    <section class="web-series" id="webSeriesSection">
+                        <ul>
+                            <li><a href="#">Web Series Title 1</a></li>
+                            <li><a href="#">Web Series Title 2</a></li>
+                            <li><a href="#">Web Series Title 3</a></li>
+                            <!-- Add more web series here -->
+                        </ul>
+                    </section>
+                </h2>
+            </h1>  
+        </div>
+        <div class="movies">
+            <h1>Movies
+                <h2>Recent releases
+                    <section class="movies" id="moviesSection">
+                        <ul>
+                            <li><a href="#">Movie Title 1</a></li>
+                            <li><a href="#">Movie Title 2</a></li>
+                            <li><a href="#">Movie Title 3</a></li>
+                            <!-- Add more movies here -->
+                        </ul>
+                    </section>
+                </h2>
+            </h1>
+        </div>
+    </div>
+    <section class="recent-releases">
+        <h1>Recent Releases</h1>
+        <ul>
+            <li><a href="#">Anime Title 1</a></li>
+            <li><a href="#">Anime Title 2</a></li>
+            <li><a href="#">Anime Title 3</a></li>
+            <!-- Add more recent releases here -->
+        </ul>
+    </section>
+</body>
+</html>

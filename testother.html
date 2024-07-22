@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Add your CSS styles here */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Style for icon buttons */
+        .icon-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            padding: 10px;
+        }
+
+        .icon-button i {
+            display: block;
+        }
+
+        /* Style for the search bar and button */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #444;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        input[type="text"] {
+            border: none;
+            background-color: transparent;
+            color: white;
+            padding: 5px;
+            margin-right: 5px;
+            width: 150px; /* Adjust the width as needed */
+        }
+
+        .search-button {
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+                /* Style for the side panel */
+        .side-panel {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Initially hidden off-screen */
+            width: 300px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .side-panel ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        .side-panel li {
+            margin-bottom: 10px;
+        }
+
+        .side-panel a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        /* Style for overlay background when panel is open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Initially hidden */
+        }
+        #menuButton {
+             display: none; /* Initially hidden on larger screens */
+        }
+        @media (max-width: 768px) {
+         #menuButton {
+        display: block;
+        }
+        }
+        .slider-pager {
+            margin-top: 20px;
+        }
+
+        .pager-button {
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="icon-button" id="homeButton"><i class="fas fa-home"></i></button>
+        <h1>Responsive Website</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button class="search-button">Search</button>
+        </div>
+        <button class="icon-button" id="hamburgerButton"><i class="fas fa-bars"></i></button>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Welcome to Our Website</h2>
+        <p>This is a simple responsive website that adapts to different phone sizes.</p>
+    </div>
+    <footer>
+        &copy; 2023 Your Website Name
+    </footer>
+
+    <script>
+        // JavaScript to add functionality to home and hamburger buttons
+        const homeButton = document.getElementById("homeButton");
+        const hamburgerButton = document.getElementById("hamburgerButton");
+
+        homeButton.addEventListener("click", () => {
+            // Replace this with the URL of your home page
+            window.location.href = "your-home-page.html";
+        });
+
+        hamburgerButton.addEventListener("click", () => {
+            // Add code to toggle the mobile menu here
+            alert("Hamburger button clicked!");
+        });
+        
+    </script>
+    <div class="side-panel" id="sidePanel">
+        <ul>
+            <li><a href="#">Your Downloads</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
